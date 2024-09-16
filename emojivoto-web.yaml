@@ -1,0 +1,24 @@
+apiVersion: platform.rig.dev/v1
+environment: prod
+kind: Capsule
+name: emojivoto-web
+project: emojivoto
+spec:
+  env:
+    raw:
+      EMOJISVC_HOST: emojivoto-emoji:80
+      INDEX_BUNDLE: /usr/local/bin/dist/index_bundle.js
+      VOTINGSVC_HOST: emojivoto-voting:80
+      WEB_PORT: "80"
+  image: buoyantio/emojivoto-web:v12
+  interfaces:
+    - name: http
+      port: 80
+  scale:
+    horizontal:
+      min: 1
+    vertical:
+      cpu:
+        request: "0.2"
+      memory:
+        request: 256Mi

@@ -1,0 +1,21 @@
+apiVersion: platform.rig.dev/v1
+environment: prod
+kind: Capsule
+name: emojivoto-voting
+project: emojivoto
+spec:
+  env:
+    raw:
+      GRPC_PORT: "80"
+  image: buoyantio/emojivoto-voting-svc:v12
+  interfaces:
+    - name: grpc
+      port: 80
+  scale:
+    horizontal:
+      min: 1
+    vertical:
+      cpu:
+        request: "0.2"
+      memory:
+        request: 256Mi
