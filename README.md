@@ -4,7 +4,7 @@ This is a simple guide for getting 3 services up and running in the Rig Platform
 
 The 3 services can be seen here: https://github.com/BuoyantIO/emojivoto.
 
-## Install
+## Setup
 
 After the Rig CLI has been configured ([see here](https://docs.rig.dev/overview/guides/getting-started)), you can apply the
 3 files as attached here:
